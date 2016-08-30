@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11191" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11156"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Get_a_Clue" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +18,52 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oUI-9M-4dh">
+                                <state key="normal" title="Update"/>
+                                <connections>
+                                    <action selector="btnUpdate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ha8-F3-pot"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aAO-lW-o0P">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="quT-CH-pOV">
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B0Q-a3-s3p">
+                                <state key="normal" title="Refresh Label"/>
+                                <connections>
+                                    <action selector="btnRefreshLabel:" destination="BYZ-38-t0r" eventType="touchUpInside" id="djY-Ko-Gn8"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="aAO-lW-o0P" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="13C-T5-4oV"/>
+                            <constraint firstItem="B0Q-a3-s3p" firstAttribute="centerX" secondItem="oUI-9M-4dh" secondAttribute="centerX" id="IsD-fn-paS"/>
+                            <constraint firstItem="aAO-lW-o0P" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="K9s-OU-5ef"/>
+                            <constraint firstItem="aAO-lW-o0P" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="175" id="Mx7-Wr-RLN"/>
+                            <constraint firstItem="quT-CH-pOV" firstAttribute="top" secondItem="oUI-9M-4dh" secondAttribute="bottom" constant="61" id="OXu-rl-Ytw"/>
+                            <constraint firstItem="aAO-lW-o0P" firstAttribute="leading" secondItem="quT-CH-pOV" secondAttribute="leading" id="TaM-Fq-xaZ"/>
+                            <constraint firstItem="B0Q-a3-s3p" firstAttribute="top" secondItem="aAO-lW-o0P" secondAttribute="bottom" constant="81" id="VwF-Lo-Qy1"/>
+                            <constraint firstItem="oUI-9M-4dh" firstAttribute="centerX" secondItem="quT-CH-pOV" secondAttribute="centerX" id="c0K-vL-03Z"/>
+                            <constraint firstItem="oUI-9M-4dh" firstAttribute="top" secondItem="B0Q-a3-s3p" secondAttribute="bottom" constant="31" id="g6r-WO-kn5"/>
+                            <constraint firstItem="aAO-lW-o0P" firstAttribute="trailing" secondItem="quT-CH-pOV" secondAttribute="trailing" id="vad-fr-GoB"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="lblLabel" destination="aAO-lW-o0P" id="lKQ-oA-NQM"/>
+                        <outlet property="txtInput" destination="quT-CH-pOV" id="us5-J9-yId"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="93.103448275862078"/>
         </scene>
     </scenes>
 </document>
