@@ -13,6 +13,12 @@
 		7435BD461D6A2B3800139A4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7435BD451D6A2B3800139A4A /* Assets.xcassets */; };
 		7435BD491D6A2B3800139A4A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7435BD471D6A2B3800139A4A /* LaunchScreen.storyboard */; };
 		7435BD591D6A2E8F00139A4A /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7435BD581D6A2E8F00139A4A /* GameKit.framework */; };
+		745714961D763E8700480695 /* UserGameScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745714951D763E8700480695 /* UserGameScreenViewController.swift */; };
+		745714981D76436B00480695 /* GameScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745714971D76436B00480695 /* GameScreenViewController.swift */; };
+		7457149A1D76533100480695 /* ParticipantScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745714991D76533100480695 /* ParticipantScreenViewController.swift */; };
+		7466BCE21D778AE000DA2DEA /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7466BCE11D778AE000DA2DEA /* Player.swift */; };
+		7466BCE41D778FFB00DA2DEA /* Thing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7466BCE31D778FFB00DA2DEA /* Thing.swift */; };
+		7466BCE61D77C74B00DA2DEA /* GameKitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7466BCE51D77C74B00DA2DEA /* GameKitHelper.swift */; };
 		74F960331D6A7D17005A371D /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74F960321D6A7D17005A371D /* CloudKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +32,12 @@
 		7435BD4A1D6A2B3800139A4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7435BD501D6A2B3F00139A4A /* Get a Clue.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Get a Clue.entitlements"; sourceTree = "<group>"; };
 		7435BD581D6A2E8F00139A4A /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		745714951D763E8700480695 /* UserGameScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserGameScreenViewController.swift; sourceTree = "<group>"; };
+		745714971D76436B00480695 /* GameScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScreenViewController.swift; sourceTree = "<group>"; };
+		745714991D76533100480695 /* ParticipantScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParticipantScreenViewController.swift; sourceTree = "<group>"; };
+		7466BCE11D778AE000DA2DEA /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		7466BCE31D778FFB00DA2DEA /* Thing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Thing.swift; sourceTree = "<group>"; };
+		7466BCE51D77C74B00DA2DEA /* GameKitHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameKitHelper.swift; sourceTree = "<group>"; };
 		74F960321D6A7D17005A371D /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -64,10 +76,10 @@
 			children = (
 				7435BD501D6A2B3F00139A4A /* Get a Clue.entitlements */,
 				7435BD3E1D6A2B3800139A4A /* AppDelegate.swift */,
-				7435BD401D6A2B3800139A4A /* ViewController.swift */,
-				7435BD421D6A2B3800139A4A /* Main.storyboard */,
+				7466BCE71D77CDE300DA2DEA /* ViewControllers */,
+				7466BCE91D77CE3B00DA2DEA /* Views */,
+				7466BCE81D77CE0A00DA2DEA /* Models */,
 				7435BD451D6A2B3800139A4A /* Assets.xcassets */,
-				7435BD471D6A2B3800139A4A /* LaunchScreen.storyboard */,
 				7435BD4A1D6A2B3800139A4A /* Info.plist */,
 			);
 			path = "Get a Clue";
@@ -80,6 +92,36 @@
 				7435BD581D6A2E8F00139A4A /* GameKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7466BCE71D77CDE300DA2DEA /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				7435BD401D6A2B3800139A4A /* ViewController.swift */,
+				745714971D76436B00480695 /* GameScreenViewController.swift */,
+				745714991D76533100480695 /* ParticipantScreenViewController.swift */,
+				745714951D763E8700480695 /* UserGameScreenViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		7466BCE81D77CE0A00DA2DEA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7466BCE11D778AE000DA2DEA /* Player.swift */,
+				7466BCE31D778FFB00DA2DEA /* Thing.swift */,
+				7466BCE51D77C74B00DA2DEA /* GameKitHelper.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		7466BCE91D77CE3B00DA2DEA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7435BD421D6A2B3800139A4A /* Main.storyboard */,
+				7435BD471D6A2B3800139A4A /* LaunchScreen.storyboard */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,8 +208,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7466BCE61D77C74B00DA2DEA /* GameKitHelper.swift in Sources */,
 				7435BD411D6A2B3800139A4A /* ViewController.swift in Sources */,
+				745714961D763E8700480695 /* UserGameScreenViewController.swift in Sources */,
+				745714981D76436B00480695 /* GameScreenViewController.swift in Sources */,
+				7457149A1D76533100480695 /* ParticipantScreenViewController.swift in Sources */,
+				7466BCE21D778AE000DA2DEA /* Player.swift in Sources */,
 				7435BD3F1D6A2B3800139A4A /* AppDelegate.swift in Sources */,
+				7466BCE41D778FFB00DA2DEA /* Thing.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

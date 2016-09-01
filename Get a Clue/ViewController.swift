@@ -12,18 +12,18 @@ import CloudKit
 
 class ViewController: UIViewController {
     var currentRecord : CKRecord?
-    
+    var localPlayer: Player?
     
     @IBOutlet var lblLabel: UILabel!
     
     @IBOutlet weak var txtInput: UITextField!
     
     @IBAction func btnRefreshLabel(_ sender: AnyObject) {
-        readTheDatabase()
+     //   readTheDatabase()
     }
    
     @IBAction func btnUpdate(_ sender: AnyObject) {
-        writeToTheDatabase()
+      //  writeToTheDatabase()
     }
     
     
@@ -31,6 +31,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         authenticateLocalPlayer()
+        populatePlayerInfo()
+        
         
     }
     
@@ -39,18 +41,27 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
+        var destViewController : UserGameScreenViewController = segue.destination as! UserGameScreenViewController
+        
+        destViewController.localPlayer = localPlayer
+       
+    }
 
     func authenticateLocalPlayer(){
-        var  localPlayer = GKLocalPlayer.localPlayer()
-        localPlayer.authenticateHandler = {(viewController, error)-> Void in
-            if (viewController != nil){
-                self.present(viewController!, animated: true, completion: nil)
-            }
-            else{
-                print(GKLocalPlayer.localPlayer().isAuthenticated)
-            }
-        }
+        var gameKitHelper = GameKitHelper()
+        gameKitHelper.authenticatePlayer(sender: self)
     }
+    
+    
+    
+    func populatePlayerInfo(){
+        localPlayer = Player()
+        localPlayer?.setFirstName(name: GKLocalPlayer.localPlayer().displayName!)
+        print(GKLocalPlayer.localPlayer().displayName)
+    }
+    
     
     func readTheDatabase(){
         let container = CKContainer.default()
@@ -78,7 +89,7 @@ class ViewController: UIViewController {
                 
                 
             }
-            print("------------- -----")
+            
         }
         
     }
